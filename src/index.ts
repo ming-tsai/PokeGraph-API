@@ -13,14 +13,11 @@ const resolvers = {
 }
 
 const options = {
+  port: 80,
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
   playground: '/playground',
 }
 
-const server = new GraphQLServer({ typeDefs: `${__dirname}/schema.graphql`, resolvers });
-server.start(options, ({ port }) =>
-  console.log(
-    `Server started, listening on port http://localhost:${port}/playground for incoming requests.`,
-  ),
-)
+const server = new GraphQLServer({ typeDefs: `schema.graphql`, resolvers });
+server.start(options);
