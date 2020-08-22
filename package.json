@@ -1,0 +1,26 @@
+{
+  "name": "poke-graph",
+  "version": "1.0.0",
+  "description": "A Pokemon GraphQL API",
+  "main": "index.js",
+  "repository": "https://github.com/ming-tsai/PokeGraph.git",
+  "author": "Ming Tsai <ming.jia1213@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "server": "ts-node src/index.ts --production",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "@types/express": "^4.17.7",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.9.1",
+    "axios": "^0.20.0",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "graphql-yoga": "^1.18.3",
+    "prettier": "^2.0.5",
+    "typescript": "^4.0.2"
+  }
+}

@@ -1,0 +1,15 @@
+type Query {
+  abilities(first: Int!, after: Int!): Abilities
+}
+
+type Ability {
+  name: String
+  url: String
+}
+
+type Abilities {
+  count: Int
+  results: [Ability!]!
+  next: String
+  previous: String
+}
