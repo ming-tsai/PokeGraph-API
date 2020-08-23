@@ -22,5 +22,5 @@ const options = {
 
 const server = new GraphQLServer({ typeDefs: `schema.graphql`, resolvers });
 server.start(options, ({ port }) => {
-  console.log(`GraphQL service on localhost:${port}`);
+  console.log(`GraphQL service on http://localhost:${port}`);
 });
