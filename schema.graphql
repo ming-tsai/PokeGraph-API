@@ -2,21 +2,33 @@ type Schema {
   query: Query
 }
 
+"""
+Root query
+"""
 type Query {
   abilities(first: Int!, after: Int = 0): Abilities
 }
 
+"""
+Ability id and name
+"""
 type Ability {
+  id: ID!
   name: String!
-  url: String!
 }
 
+"""
+List of ability id and name
+"""
 type Abilities {
   count: Int
-  results: [Ability!]
+  nodes: [Ability!]
   pageInfo: PageInfo!
 }
 
+"""
+Pagination type
+"""
 type PageInfo {
   hasNext: Boolean!
   hasPrevious: Boolean!
