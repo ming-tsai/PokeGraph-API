@@ -1,15 +1,15 @@
 type Query {
-  abilities(first: Int!, after: Int!): Abilities
+  abilities(first: Int!, after: Int=0): Abilities
 }
 
 type Ability {
-  name: String
-  url: String
+  name: String!
+  url: String!
 }
 
 type Abilities {
   count: Int
-  results: [Ability!]!
+  results: [Ability!]
   next: String
   previous: String
 }
