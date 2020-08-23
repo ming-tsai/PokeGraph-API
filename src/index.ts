@@ -13,7 +13,6 @@ const resolvers = {
 }
 
 const options = {
-  port: 80,
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
   playground: '/playground',
