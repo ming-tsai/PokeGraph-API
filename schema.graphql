@@ -1,5 +1,9 @@
+type Schema {
+  query: Query
+}
+
 type Query {
-  abilities(first: Int!, after: Int=0): Abilities
+  abilities(first: Int!, after: Int = 0): Abilities
 }
 
 type Ability {
@@ -10,6 +14,12 @@ type Ability {
 type Abilities {
   count: Int
   results: [Ability!]
-  next: String
-  previous: String
+  pageInfo: PageInfo!
+}
+
+type PageInfo {
+  hasNext: Boolean!
+  hasPrevious: Boolean!
+  next: Int
+  previous: Int
 }
