@@ -15,7 +15,6 @@ const resolvers = {
 const options = {
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
-  playground: '/playground',
 }
 
 const server = new GraphQLServer({ typeDefs: `schema.graphql`, resolvers });
