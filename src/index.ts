@@ -1,4 +1,4 @@
-import { GraphQLServer } from 'graphql-yoga';
+import { GraphQLServer } from "graphql-yoga";
 import axios from "axios";
 
 const baseURL = `https://pokeapi.co/api/v2`
