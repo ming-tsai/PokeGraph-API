@@ -7,7 +7,7 @@
   "author": "Ming Tsai <ming.jia1213@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts",
     "serve": "node dist/index.js",
     "build": "copyfiles schema.graphql dist/ && tsc -p ."
   },
