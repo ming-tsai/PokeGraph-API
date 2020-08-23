@@ -1,5 +1,5 @@
 {
-  "name": "poke-graph",
+  "name": "pokegraph-api",
   "version": "1.0.0",
   "description": "A Pokemon GraphQL API",
   "main": "index.js",
