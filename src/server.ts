@@ -1,26 +1,16 @@
 import { GraphQLServer } from "graphql-yoga";
-import axios from "axios";
-import { getPageInfo } from './utils/page-info';
-
-const baseURL = `https://pokeapi.co/api/v2`
+import { RootQuery } from './graphql/root-query';
+import { getOptions as options } from './graphql/config';
 
 const resolvers = {
   Query: {
-    abilities: async (_: any, { first, after }: any) => {
-      const response = await axios.get(`${baseURL}/ability/?offset=${after}&limit=${first}`);
-      let result = response.data;
-      result.pageInfo = getPageInfo(result.count, first, after);
-      return result;
-    },
+    ...RootQuery
   },
 }
 
-const options = {
-  endpoint: '/graphql',
-  subscriptions: '/subscriptions',
-}
-
-const server = new GraphQLServer({ typeDefs: `schema.graphql`, resolvers });
+const server = new GraphQLServer({
+  typeDefs: `schema.graphql`, resolvers: resolvers as any
+});
 server.start(options, ({ port }) => {
   console.log(`GraphQL service on http://localhost:${port}`);
 });
