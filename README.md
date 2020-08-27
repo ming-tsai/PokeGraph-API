@@ -11,3 +11,6 @@ A Pokemon GraphQL API
 - [ ] Berries
 - [ ] Contests
 - [ ] Encounters
+
+# License
+[MIT](./LICENSE) © Pokegraph-API
