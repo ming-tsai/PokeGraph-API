@@ -8,7 +8,7 @@ export module AbilityQuery {
     export const abilities = async (
         first: number | null,
         after: number | null): Promise<any> => {
-        const response = await axios.get(`${baseURL}ability/?offset=${after}&limit=${first}`);
+        const response = await axios.get(`${baseURL}/ability/?offset=${after}&limit=${first}`);
         let result = response.data;
         result.pageInfo = getPageInfo(result.count, first, after);
         result.nodes = result.results.map((x) => {
