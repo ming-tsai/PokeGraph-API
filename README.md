@@ -7,7 +7,7 @@ A Pokemon GraphQL API
   * [x] Abilities (Pagination)
   * [ ] Ability Info
   * [ ] Gender
-  * [ ] Pokedex (Pokemon Info)
+  * [x] Pokedex (Primary Info)
 - [ ] Berries
 - [ ] Contests
 - [ ] Encounters
