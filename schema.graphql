@@ -6,7 +6,31 @@ type Schema {
 Root query
 """
 type Query {
-  abilities(first: Int!, after: Int = 0): Abilities
+  pokedex(first:Int!, after: Int = 0) : Pokedex,
+  pokemon(id: Int!) : Pokemon,
+  abilities(first: Int!, after: Int = 0): Abilities,
+}
+
+"""
+A digital encyclopedia created by Professor Oak
+"""
+type Pokedex {
+  count: Int
+  nodes: [Pokemon]
+  pageInfo: PageInfo!
+}
+
+"""
+Pokemon info
+"""
+type Pokemon {
+  id: Int,
+  name: String,
+  baseExperience: Int,
+  isDefault: Boolean,
+  order: Int,
+  height: Int,
+  weight: Int
 }
 
 """
