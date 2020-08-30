@@ -11,16 +11,24 @@ export module AbilityQuery {
         const response = await axios.get(`${baseURL}/ability/?offset=${after}&limit=${first}`);
         let result = response.data;
         result.pageInfo = getPageInfo(result.count, first, after);
-        result.nodes = result.results.map((x) => {
-            return {
-                name: x.name,
-                id: getIdFromUrl(x.url)
-            }
+        result.nodes = result.results.map(async (x) => {
+            return await ability(getIdFromUrl(x.url))
         });
+
         return result;
     }
 
-    export const ability = async (): Promise<any> => {
-        throw new Error("Not implement");
+    export const ability = async (id: number): Promise<any> => {
+        const response = await axios.get(`${baseURL}/ability/${id}`);
+        const data = response.data;
+        return {
+            id: data.id,
+            name: data.name,
+            isMainSeries: data.is_main_series,
+            generation: {
+                id: getIdFromUrl(data.generation.url),
+                name: data.generation.name
+            }
+        };
     }
 }

@@ -9,6 +9,7 @@ type Query {
   pokedex(first:Int!, after: Int = 0) : Pokedex,
   pokemon(id: Int!) : Pokemon,
   abilities(first: Int!, after: Int = 0): Abilities,
+  ability(id: Int!) : Ability,
 }
 
 """
@@ -34,20 +35,27 @@ type Pokemon {
 }
 
 """
-Ability id and name
-"""
-type Ability {
-  id: ID!
-  name: String!
-}
-
-"""
 List of ability id and name
 """
 type Abilities {
   count: Int
   nodes: [Ability!]
   pageInfo: PageInfo!
+}
+
+"""
+Ability id and name
+"""
+type Ability {
+  id: ID!
+  name: String!
+  isMainSeries: Boolean
+  generation: Generation
+}
+
+type Generation {
+  id: ID!,
+  name: String!
 }
 
 """
